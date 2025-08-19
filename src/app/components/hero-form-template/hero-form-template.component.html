@@ -1,0 +1,19 @@
+<form #f="ngForm" (ngSubmit)="submit(f)" novalidate>
+    <h2>Template-driven Form</h2>
+    <label>Nom</label>
+    <input type="text" name="name" [(ngModel)]="hero.name" required minlength="3" #nameCtrl="ngModel">
+    <div class="err" *ngIf="nameCtrl.invalid && nameCtrl.touched"> 
+        <small *ngIf="nameCtrl.errors?.['required']"> Nom requis</small>
+        <small *ngIf="nameCtrl.errors?.['minlength']">Minimum 3 caractères</small>
+    </div>
+    <label>Power</label>
+    <input type="text" name="power" [(ngModel)]="hero.power">
+    
+    <label>E-mail</label>
+    <input type="text" name="email" [(ngModel)]="hero.email" email #emailCtrl="ngModel">
+    <div class="err" *ngIf="emailCtrl.invalid && emailCtrl.touched">
+        <small>Email invalide</small>
+    </div>
+
+    <button type="submit" [disabled]="f.invalid">Enregistrer</button>
+</form>

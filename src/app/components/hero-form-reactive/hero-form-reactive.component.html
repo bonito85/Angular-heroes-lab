@@ -1,0 +1,34 @@
+<form [formGroup]="heroForm" (ngSubmit)="submit()">
+  <h2>Reactive Form</h2>
+
+  <!-- Champs du formulaire -->
+  <label>Nom</label>
+  <input type="text" formControlName="name">
+  <div class="err" *ngIf="name?.invalid && name?.touched">
+    <small *ngIf="name?.hasError('required')">Nom requis</small>
+    <small *ngIf="name?.hasError('minlength')">Mininimum 3 caractères</small>
+    <small *ngIf="name?.hasError('forbiddenName')">"Batman" est interdit</small>
+  </div>
+
+  <label>Power</label>
+  <input type="text" formControlName="power">
+
+  <label>Email</label>
+  <input type="email" formControlName="email">
+  <div class="err" *ngIf="email?.invalid && email?.touched">
+    <small>Email invalide</small>
+  </div>
+
+<label>Pouvoirs</label>
+<div formArrayName="powers">
+  <div *ngFor="let ctrl of powers.controls; let i = index">
+    <input [formControlName]="i" type="text" placeholder="Pouvoir {{i+1}}">
+    <button type="button" (click)="removePower(i)" *ngIf="powers.length > 1">Supprimer</button>
+  </div>
+  <button type="button" (click)="addPower()">Ajouter un pouvoir</button>
+</div>
+
+  <button type="submit" [disabled]="heroForm.invalid">Enregistrer</button>
+
+  <pre>{{ heroForm.value | json }}</pre>
+</form>

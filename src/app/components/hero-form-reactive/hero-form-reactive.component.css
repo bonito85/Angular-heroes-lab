@@ -1,0 +1,14 @@
+/* src/app/components/hero-form-reactive/hero-form-reactive.component.css */
+.err small { 
+  color: #b00020; 
+}
+
+input.ng-invalid.ng-touched { 
+  border-color: #b00020; 
+}
+
+form { 
+  display: grid; 
+  gap: .5rem; 
+  max-width: 420px; 
+}

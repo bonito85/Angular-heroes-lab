@@ -1,0 +1,8 @@
+<div *ngIf="hero as h" class="card">
+  <h3>Hero Detail</h3>
+  <p><strong>ID:</strong> {{ h.id }}</p>
+  
+  <!-- Two-way binding avec ngModel -->
+  <label for="hero-name">Name:</label>
+  <input id="hero-name" type="text" [(ngModel)]="h.name">
+</div>
