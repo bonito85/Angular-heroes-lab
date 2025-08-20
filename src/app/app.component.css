@@ -22,3 +22,12 @@
   color: white;
   border-color: #007bff;
 }
+
+.nav { 
+      display: flex; 
+      gap: 1rem; 
+      margin-bottom: 1rem; 
+    }
+    .active { 
+      text-decoration: underline; 
+    }

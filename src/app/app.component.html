@@ -1,8 +1,8 @@
 
-<h1>Tour of Heroes — TP</h1>
+<!--<h1>Tour of Heroes — TP</h1>-->
     
     <!-- Navigation pour le routing -->
-     <nav class="nav">
+    <!--   <nav class="nav">
       <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">
         Dashboard
       </a>
@@ -11,12 +11,21 @@
       </a>
     </nav>
 
-
-  <h1>TP — Formulaires Angular</h1>
+  -->
+<!-- <h1>TP — Formulaires Angular</h1>
     <section class="grid">
       <app-hero-form-template></app-hero-form-template>
       <app-hero-form-reactive></app-hero-form-reactive>
     </section>
+--> 
+   <h1>Heroes — CRUD REST</h1>
+    
+    <nav class="nav">
+      <a routerLink="/heroes" routerLinkActive="active" ariaCurrentWhenActive="page">List</a>
+      <a routerLink="/heroes/new" routerLinkActive="active" ariaCurrentWhenActive="page">Create</a>
+    </nav>  
+
+    <app-hero-list></app-hero-list>
     
     <!-- Zone pour afficher les routes -->
     <router-outlet></router-outlet>

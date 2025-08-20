@@ -8,5 +8,8 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'heroes', component: HeroesComponent },
     { path: 'detail/:id', component: HeroDetailComponent },
-    { path: '**', redirectTo: 'dashboard' }
+    { path: 'heroes', loadComponent: () => import('./components/hero-list/hero-list.component').then(m => m.HeroListComponent) },
+    { path: 'heroes/new', loadComponent: () => import('./components/hero-edit/hero-edit.component').then(m => m.HeroEditComponent)},
+    { path: 'heroes/:id', loadComponent: () => import('./components/hero-edit/hero-edit.component').then(m => m.HeroEditComponent) },
+    { path: '**', redirectTo: 'dashboard' },
 ];

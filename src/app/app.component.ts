@@ -13,8 +13,9 @@ import { HeroFormReactiveComponent } from './components/hero-form-reactive/hero-
     RouterOutlet,
     RouterLink, 
     RouterLinkActive, 
-    HeroFormTemplateComponent,
-    HeroFormReactiveComponent
+    HeroListComponent
+    //HeroFormTemplateComponent,
+    //HeroFormReactiveComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css', 

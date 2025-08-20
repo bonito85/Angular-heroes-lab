@@ -8,16 +8,17 @@ import { Hero } from './models/heros';
   selector: 'app-heroes',
   standalone: true,
   imports: [CommonModule, RouterLink],
+
   template: `
-    <h2>My Heroes</h2>
+    <!-- <h2>My Heroes</h2>
     <ul class="list">
       <li *ngFor="let hero of heroes">
         <a [routerLink]="['/detail', hero.id]">{{ hero.name }}</a>
       </li>
-    </ul>
+    </ul> -->
   `,
   styles: [`
-    .list {
+   /*  .list {
       list-style: none;
       padding: 0;
     }
@@ -33,7 +34,7 @@ import { Hero } from './models/heros';
     }
     a:hover {
       background-color: #f5f5f5;
-    }
+    } */
   `]
 })
 export class HeroesComponent implements OnInit {
