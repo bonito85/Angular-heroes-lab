@@ -1,0 +1,6 @@
+.err { color: #b00020; }
+    .actions { 
+      margin-top: 10px; 
+      display: flex; 
+      gap: .5rem; 
+    }

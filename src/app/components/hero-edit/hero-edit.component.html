@@ -1,0 +1,20 @@
+<h2>{{ isNew ? 'Create' : 'Edit' }} Hero</h2>
+    
+    <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+      <label>Nom</label>
+      <input formControlName="name">
+      <small class="err" *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">
+       Le nom est requis
+      </small>
+      
+      <label>Power</label>
+      <input formControlName="power">
+      
+      <div class="actions">
+        <button type="submit" [disabled]="form.invalid">
+          {{ isNew ? 'Create' : 'Update' }}
+        </button>
+        <button type="button" (click)="cancel()">Cancel</button>
+        
+      </div>
+    </form>
